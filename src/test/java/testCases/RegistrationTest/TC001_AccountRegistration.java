@@ -29,7 +29,7 @@ public class TC001_AccountRegistration extends BaseTest {
         String confirmationMsg = regis.getConfirmationMessage();
         if (confirmationMsg.equals("Your Account Has Been Created!")){
             Assert.assertTrue(true);
-            logger.info("Test Case Success !");
+            logger.info("Test Case Passed !");
         } else {
             Assert.fail();
             logger.info("Test Case Failed !");

@@ -8,6 +8,8 @@
         <parameter name="browser" value="chrome" />
         <classes>
             <class name="testCases.RegistrationTest.TC001_AccountRegistration"/>
+            <class name="testCases.RegistrationTest.TC001_AccountRegistration"/>
+
         </classes>
     </test>
 
@@ -15,6 +17,7 @@
         <parameter name="os" value="Windows" />
         <parameter name="browser" value="firefox" />
         <classes>
+            <class name="testCases.RegistrationTest.TC001_AccountRegistration"/>
             <class name="testCases.RegistrationTest.TC001_AccountRegistration"/>
         </classes>
     </test>

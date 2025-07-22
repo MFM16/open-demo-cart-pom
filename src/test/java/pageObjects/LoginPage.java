@@ -12,6 +12,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//input[@id='input-email']") WebElement txtEmail;
     @FindBy(xpath = "//input[@id='input-password']") WebElement txtPassword;
     @FindBy(xpath = "//button[normalize-space()='Login']") WebElement btnLogin;
+    @FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']") WebElement alertLoginFailed;
 
     public void setTxtEmail(String email){
         txtEmail.sendKeys(email);
@@ -23,5 +24,13 @@ public class LoginPage extends BasePage {
 
     public void clickBtnLogin(){
         btnLogin.click();
+    }
+
+    public boolean isLoginFailed(){
+        try{
+            return alertLoginFailed.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
     }
 }

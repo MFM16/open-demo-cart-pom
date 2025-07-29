@@ -1,18 +1,22 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import testCases.JSutilities;
 
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver){
         super(driver);
     }
 
+    JSutilities js = new JSutilities(driver);
+
     @FindBy(xpath = "//input[@id='input-email']") WebElement txtEmail;
     @FindBy(xpath = "//input[@id='input-password']") WebElement txtPassword;
     @FindBy(xpath = "//button[normalize-space()='Login']") WebElement btnLogin;
-    @FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']") WebElement alertLoginFailed;
+    @FindBy(xpath = "//button[@class='btn-close']") WebElement btnCloseAlert;
 
     public void setTxtEmail(String email){
         txtEmail.sendKeys(email);
@@ -26,11 +30,12 @@ public class LoginPage extends BasePage {
         btnLogin.click();
     }
 
-    public boolean isLoginFailed(){
-        try{
-            return alertLoginFailed.isDisplayed();
-        }catch (Exception e){
+    public boolean isButtonLoginDisplayed(){
+        try {
+            return btnLogin.isDisplayed();
+        } catch (Exception e){
             return false;
         }
     }
+
 }

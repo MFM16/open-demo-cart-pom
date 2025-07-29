@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -21,6 +22,7 @@ public class BaseTest {
     public WebDriver driver;
     public Logger logger;
     public Properties property;
+    public WebDriverWait wait;
 
     @BeforeClass
     @Parameters({"os", "browser"})
@@ -52,8 +54,10 @@ public class BaseTest {
 
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.get(property.getProperty("appUrl"));
+        driver.get(property.getProperty("app" +
+                "Url"));
     }
 
     @AfterClass

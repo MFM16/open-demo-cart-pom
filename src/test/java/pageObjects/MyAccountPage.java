@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import testCases.JSutilities;
 
 public class MyAccountPage extends BasePage {
     public MyAccountPage(WebDriver driver){
@@ -21,6 +22,8 @@ public class MyAccountPage extends BasePage {
     }
 
     public void clickBtnLogout(){
-        btnLogout.click();
+        JSutilities js = new JSutilities(driver);
+        js.scrollIntoView(btnLogout);
+        js.click(btnLogout);
     }
 }

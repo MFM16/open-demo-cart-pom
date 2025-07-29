@@ -3,11 +3,14 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import testCases.JSutilities;
 
 public class RegistrationPage extends BasePage{
     public RegistrationPage(WebDriver driver){
         super(driver);
     }
+
+    JSutilities js = new JSutilities(driver);
 
     @FindBy(xpath = "//input[@id='input-firstname']") WebElement txtFirstName;
     @FindBy(xpath = "//input[@id='input-lastname']") WebElement txtLastName;
@@ -34,11 +37,13 @@ public class RegistrationPage extends BasePage{
     }
 
     public void clickCheckboxAgreement(){
-        checkboxAgreement.click();
+        js.scrollIntoView(checkboxAgreement);
+        js.click(checkboxAgreement);
     }
 
     public void clickBtnContinue(){
-        btnContinue.click();
+        js.scrollIntoView(btnContinue);
+        js.click(btnContinue);
     }
 
     public String getConfirmationMessage(){

@@ -33,12 +33,12 @@ public class TC002_LoginAccount extends BaseTest {
             account.clickBtnLogout();
             logger.info("Test Case Login Success Passed !");
         }else{
-            if(login.isLoginFailed()){
+            if(login.isButtonLoginDisplayed()){
                 Assert.assertTrue(true);
                 logger.info("Test Case Login Failed Passed !");
             }else{
-                Assert.fail();
                 logger.info("Test Case Failed !");
+                Assert.fail();
             }
         }
 

@@ -8,10 +8,10 @@ import pageObjects.LoginPage;
 import pageObjects.MyAccountPage;
 import testCases.BaseTest;
 
-public class TC002_LoginAccount extends BaseTest {
+public class LoginAccount extends BaseTest {
     @Test(dataProvider = "userCredentials")
     public void LoginTest(String email, String password){
-        logger.info("---------- Started TC002_LoginAccount ----------");
+        logger.info("---------- Started LoginAccount ----------");
 
         HomePage home = new HomePage(driver);
         home.clickLinkMyAccount();
@@ -42,7 +42,7 @@ public class TC002_LoginAccount extends BaseTest {
             }
         }
 
-        logger.info("---------- Finished TC002_LoginAccount ----------");
+        logger.info("---------- Finished LoginAccount ----------");
     }
 
     @DataProvider(name = "userCredentials")

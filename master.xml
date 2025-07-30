@@ -7,8 +7,10 @@
         <parameter name="os" value="Windows" />
         <parameter name="browser" value="firefox" />
         <classes>
-            <class name="testCases.RegistrationTest.TC001_AccountRegistration"/>
-            <class name="testCases.LoginTest.TC002_LoginAccount"/>
+            <class name="testCases.RegistrationTest.AccountRegistration"/>
+            <class name="testCases.LoginTest.LoginAccount"/>
+            <class name="testCases.SearchTest.SearchFound" />
+            <class name="testCases.SearchTest.SearchNotFound" />
         </classes>
     </test>
 </suite>

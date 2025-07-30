@@ -6,10 +6,10 @@ import pageObjects.HomePage;
 import pageObjects.RegistrationPage;
 import testCases.BaseTest;
 
-public class TC001_AccountRegistration extends BaseTest {
+public class AccountRegistration extends BaseTest {
     @Test
     public void verifyAccountRegistration(){
-        logger.info("---------- Test TC001_AccountRegistration ----------");
+        logger.info("---------- Test AccountRegistration ----------");
 
         HomePage home = new HomePage(driver);
         home.clickLinkMyAccount();
@@ -35,6 +35,6 @@ public class TC001_AccountRegistration extends BaseTest {
             logger.info("Test Case Failed !");
         }
 
-        logger.info("---------- Finished TC001_AccountRegistration ----------");
+        logger.info("---------- Finished AccountRegistration ----------");
     }
 }
